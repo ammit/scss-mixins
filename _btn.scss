@@ -1,0 +1,74 @@
+/*
+ * Live at codepen - https://codepen.io/ammit/pen/rweVZG
+ */
+@mixin btn($bg: #ccc, $border-radius: 0, $pad: 16px, $danger: #f44336) {
+  display: inline-block;
+  font-family: inherit;
+  outline: 0;
+  border: 1px solid darken($bg, 5%);
+  border-radius: $border-radius;
+  color: white;
+  background: $bg;
+  white-space: nowrap;
+  padding: $pad/1.5 $pad;
+  line-height: 1;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: regular;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  &:not(.btn-disabled){
+    &:hover,
+    &:active {
+      background: lighten($bg, 5%);
+    }
+  }
+  
+  &-w-icon {
+    padding-left: $pad+$pad/1.5+16px !important;
+    position: relative;
+  }
+  
+  &-danger {
+    background: lighten($danger, 5%);
+    border-color: $danger;
+    
+    &:not(.btn-disabled){
+      &:hover,
+      &:active {
+        background: lighten($danger, 10%);
+      }
+    }
+  }
+  
+  &-disabled {
+    &,
+    &:hover,
+    &:active {
+      opacity: 0.5;
+    }
+  }
+  
+  
+  &-full {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: $pad;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: $bg;
+    transition: fill 0.3s ease;
+    path {
+      fill: #fff;
+    }
+  }
+}
