@@ -1,0 +1,12 @@
+.list-inline {
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 1.4em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
