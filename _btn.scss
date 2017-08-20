@@ -3,9 +3,11 @@
  */
 @mixin btn($bg: #ccc, $border-radius: 0, $pad: 16px, $danger: #f44336) {
   display: inline-block;
+  vertical-align: middle;
+  user-select: none;  
   font-family: inherit;
   outline: 0;
-  border: 1px solid darken($bg, 5%);
+  border: 1px solid darken($bg, 10%);
   border-radius: $border-radius;
   color: white;
   background: $bg;
@@ -22,8 +24,14 @@
 
   &:not(.btn-disabled){
     &:hover,
-    &:active {
+    &:focus {
+      outline: 0;
       background: lighten($bg, 5%);
+    }
+    
+    &.active,
+    &:active {
+      background-image: none;
     }
   }
   
@@ -49,6 +57,7 @@
     &:hover,
     &:active {
       opacity: 0.5;
+      pointer-events: none;
     }
   }
   
